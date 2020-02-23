@@ -10,9 +10,9 @@ export default function Template({
   return (
     <ArticleLayout siteName={data.site.siteMetadata.title} >
       <div>
-          <h1><a className="block mt-1 text-2xl leading-tight font-bold text-gray-900 mb-4">{frontmatter.title}</a></h1>
+          <h1><a className="block mt-1 text-2xl leading-tight font-bold text-gray-900 mb-2">{frontmatter.title}</a></h1>
           <h2 className="uppercase tracking-wide text-sm text-gray-600 font-bold">{frontmatter.date}
-            <span className="uppercase tracking-wide text-sm text-red-600 font-bold ml-4">
+            <span className="uppercase tracking-wide text-sm text-red-600 font-bold ml-2">
               {frontmatter.category}
             </span>
           </h2>
