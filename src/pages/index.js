@@ -15,7 +15,7 @@ const IndexPage = (props) => (
     <SEO title="Home" />
     <div className="md:flex max-w-screen-xl m-auto px-8 justify-around">
       <div className="flex md:w-2/3 flex-col justify-around">
-        <h1 className="text-3xl font-bold mt-4">Headlines</h1>
+        <h1 className="text-3xl font-bold mt-8">Headlines</h1>
         {/* {props.data.allMarkdownRemark.edges.map((node) => (
           <Article
             articleCategory={node.node.frontmatter.category}
