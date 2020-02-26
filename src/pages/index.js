@@ -82,7 +82,7 @@ IndexPage.defaultProps = {
 
 export const query = graphql`
 query HomePageQuery {
-  allWordpressPost(limit: 3, sort: {fields: date, order: DESC}) {
+  allWordpressPost(filter: {categories: {elemMatch: {name: {nin: "editorial"}}}}, sort: {fields: date, order: DESC}, limit: 3) {
     edges {
       node {
         id
@@ -97,6 +97,7 @@ query HomePageQuery {
     }
   }
 }
+
 `
 
 export default IndexPage

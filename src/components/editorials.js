@@ -1,27 +1,33 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
-const Editorial = ({ siteTitle }) => (
-  <editorial className="flex flex-col min-h-full md:min-h-0 md:h-full w-full mt-8 sm:mt-0 md:mt-16 sm:ml-8 md:ml-0 justify-between">
-      <div className="mb-8 h-16">
-        <div className="uppercase tracking-wide text-sm text-blue-600 font-bold">Editorial</div>
-        <a href="#" className="block mt-1 leading-tight font-semibold text-gray-900 hover:underline">Finding customers for your new business</a>
-      </div>
-      <div className="mb-8 h-16">
-        <div className="uppercase tracking-wide text-sm text-blue-600 font-bold">Editorial</div>
-        <a href="#" className="block mt-1 leading-tight font-semibold text-gray-900 hover:underline">Finding customers for your new business</a>
-      </div>
-      <div className="mb-8 h-16">
-        <div className="uppercase tracking-wide text-sm text-blue-600 font-bold">Editorial</div>
-        <a href="#" className="block mt-1 leading-tight font-semibold text-gray-900 hover:underline">Finding customers for your new business</a>
-      </div>
-      <div className="h-16">
-        <div className="uppercase tracking-wide text-sm text-blue-600 font-bold">Editorial</div>
-        <a href="#" className="block mt-1 leading-tight font-semibold text-gray-900 hover:underline">Finding customers for your new business</a>
-      </div>
-  </editorial>
-)
+function Editorial (props) { 
+  const editorials = useStaticQuery(graphql`
+  query {
+    allWordpressPost(filter: {categories: {elemMatch: {name: {in: "editorial"}}}}, sort: {fields: date, order: DESC}, limit: 4) {
+      edges {
+        node {
+          title
+          date
+        }
+      }
+    }
+  }
+  `
+  )
+  return (
+    <editorial className="flex flex-col min-h-full md:min-h-0 md:h-full w-full mt-8 sm:mt-0 md:mt-16 sm:ml-8 md:ml-0 justify-between">
+      {editorials.allWordpressPost.edges.map((node) => (
+        <div className="mb-8 h-16">
+          <div className="uppercase tracking-wide text-sm text-blue-600 font-bold">Editorial</div>
+          <a href="#" className="block mt-1 leading-tight font-semibold text-gray-900 hover:underline">{node.node.title}</a>
+        </div>
+      ))}
+    </editorial>
+  )
+}
 
 Editorial.propTypes = {
   siteTitle: PropTypes.string,
