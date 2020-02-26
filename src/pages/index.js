@@ -28,7 +28,7 @@ const IndexPage = (props) => (
           <Article
             articleTitle={node.node.title}
             articleCategory={node.node.categories[0].name}
-            articleText="Preview"
+            articleText={node.node.excerpt}
             articleImage={props.articleImage}
             articlePath={node.node.slug}
           />
@@ -80,24 +80,6 @@ IndexPage.defaultProps = {
   articleImage: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=448&q=80'
 }
 
-// export const query = graphql`
-// query HomePageQuery {
-//   allMarkdownRemark {
-//     edges {
-//       node {
-//         frontmatter {
-//           category
-//           date
-//           path
-//           preview
-//           title
-//         }
-//       }
-//     }
-//   }
-// }
-// `
-
 export const query = graphql`
 query HomePageQuery {
   allWordpressPost(limit: 3, sort: {fields: date, order: DESC}) {
@@ -107,6 +89,7 @@ query HomePageQuery {
         slug
         title
         date
+        excerpt
         categories {
           name
         }

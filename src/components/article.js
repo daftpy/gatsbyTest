@@ -12,7 +12,12 @@ const Article = (props) => (
     <div className={props.articleImage ? "mt-4 sm:mt-0 sm:mx-6 items-center" :  "mt-4 sm:mt-0 mr-4 items-center"}>
       <div className="uppercase tracking-wide text-sm text-red-600 font-bold">{props.articleCategory}</div>
       <a href={props.articlePath} className="block mt-1 text-lg leading-tight font-semibold text-gray-900 hover:underline">{props.articleTitle}</a>
-      <p className="mt-2 text-gray-600 overflow-hidden">{props.articleText}</p>
+      {/* <p className="mt-2 text-gray-600 overflow-hidden">{props.articleText}</p> */}
+      
+      <div
+        className="mt-2 text-gray-600 overflow-hidden"
+        dangerouslySetInnerHTML={{ __html: props.articleText }}
+      />
       
     </div>
   </article>
