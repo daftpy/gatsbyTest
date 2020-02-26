@@ -16,13 +16,22 @@ const IndexPage = (props) => (
     <div className="md:flex max-w-screen-xl m-auto px-8 justify-around">
       <div className="flex md:w-2/3 flex-col justify-around">
         <h1 className="text-3xl font-bold mt-4">Headlines</h1>
-        {props.data.allMarkdownRemark.edges.map((node) => (
+        {/* {props.data.allMarkdownRemark.edges.map((node) => (
           <Article
             articleCategory={node.node.frontmatter.category}
             articleTitle={node.node.frontmatter.title}
             articleText={node.node.frontmatter.preview}
             articleImage={props.articleImage}
             articlePath={node.node.frontmatter.path} />
+        ))} */}
+        {props.data.allWordpressPost.edges.map((node) => (
+          <Article
+            articleTitle={node.node.title}
+            articleCategory={node.node.categories[0].name}
+            articleText="Preview"
+            articleImage={props.articleImage}
+            articlePath={node.node.slug}
+          />
         ))}
       </div>
       <div className="flex md:w-1/3 flex-col mt-8 md:mt-0 sm:flex-row md:flex-col">
@@ -71,17 +80,35 @@ IndexPage.defaultProps = {
   articleImage: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=448&q=80'
 }
 
+// export const query = graphql`
+// query HomePageQuery {
+//   allMarkdownRemark {
+//     edges {
+//       node {
+//         frontmatter {
+//           category
+//           date
+//           path
+//           preview
+//           title
+//         }
+//       }
+//     }
+//   }
+// }
+// `
+
 export const query = graphql`
 query HomePageQuery {
-  allMarkdownRemark {
+  allWordpressPost(limit: 3, sort: {fields: date, order: DESC}) {
     edges {
       node {
-        frontmatter {
-          category
-          date
-          path
-          preview
-          title
+        id
+        slug
+        title
+        date
+        categories {
+          name
         }
       }
     }
