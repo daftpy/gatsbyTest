@@ -16,14 +16,6 @@ const IndexPage = (props) => (
     <div className="md:flex max-w-screen-xl m-auto px-8 justify-around">
       <div className="flex md:w-2/3 flex-col justify-around">
         <h1 className="text-3xl font-bold mt-8">Headlines</h1>
-        {/* {props.data.allMarkdownRemark.edges.map((node) => (
-          <Article
-            articleCategory={node.node.frontmatter.category}
-            articleTitle={node.node.frontmatter.title}
-            articleText={node.node.frontmatter.preview}
-            articleImage={props.articleImage}
-            articlePath={node.node.frontmatter.path} />
-        ))} */}
         {props.data.allWordpressPost.edges.map((node) => (
           <Article
             articleTitle={node.node.title}
@@ -39,7 +31,7 @@ const IndexPage = (props) => (
         <Editorials/>
       </div>
   </div>
-  <div className="bg-indigo-100 mt-12 py-8">
+  <div className="bg-indigo-100 mt-12 mb-8 py-8">
     <Podcast />
   </div>
   <div className="md:flex max-w-screen-xl m-auto mt-4 px-8 justify-around">
