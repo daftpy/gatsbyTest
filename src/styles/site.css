@@ -27,7 +27,7 @@
     padding-right: 1rem;
 }
 
-blockquote {
+.article-content > blockquote {
     margin-top: 1rem;
     padding: .5rem 1rem;
     background: #edf3fa;
@@ -35,11 +35,11 @@ blockquote {
     border-left: .6rem solid #818b96;
 }
 
-ul {
+.article-content > ul {
     margin-top: 1rem;
     list-style-type: disc;
 }
 
-ul li {
+.article-content > ul li {
     margin: .5rem 0 .5rem 1rem;
 }
