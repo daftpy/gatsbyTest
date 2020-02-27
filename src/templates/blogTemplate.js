@@ -1,5 +1,6 @@
 import React from "react"
 import ArticleLayout from "../components/article-layout"
+import SEO from "../components/seo"
 import { graphql } from "gatsby"
 
 export default function Template({
@@ -8,6 +9,7 @@ export default function Template({
   const post = data.wordpressPost
   return (
     <ArticleLayout siteName={data.site.siteMetadata.title} >
+      <SEO title={post.title} description={post.excerpt}/>
       <div>
           {post.featured_media && (
             <img className="w-full" src={post.featured_media.source_url} />
@@ -32,6 +34,7 @@ export const postQuery = graphql`
       title
       content
       date(formatString: "MMMM DD, YYYY")
+      excerpt
       categories {
         name
       }
