@@ -18,6 +18,6 @@
     float: left;
 }
 
-.imbed figure {
-    margin-top: 100px;
+.article-content > div {
+    margin-left: -40px;
 }
