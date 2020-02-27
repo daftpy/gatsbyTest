@@ -19,7 +19,7 @@ function Editorial (props) {
   `
   )
   return (
-    <editorial className="flex flex-col w-full mt-8 sm:mt-0 md:mt-16 sm:ml-8 md:ml-0 justify-between">
+    <editorial className="flex flex-col w-full mt-8 sm:mt-0 md:mt-8 sm:ml-8 md:ml-0 justify-between">
       {editorials.allWordpressPost.edges.map((node) => (
         <div className="mb-8">
           <div className="uppercase tracking-wide text-sm text-blue-600 font-bold">Editorial</div>
