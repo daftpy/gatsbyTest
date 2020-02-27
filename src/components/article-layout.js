@@ -11,10 +11,10 @@ const ArticleLayout = (props) => {
       <div>
       <Header siteTitle={props.siteName} />
       <div className="md:flex max-w-screen-xl m-auto px-8 justify-around">
-          <div className="flex md:w-2/3 mt-4 flex-col">
+          <div className="flex md:w-2/3 mt-4 md:mr-4 flex-col">
             {props.children}
           </div>
-          <div className="flex md:w-1/3 flex-col mt-8 md:mt-0 sm:flex-row md:flex-col">
+          <div className="flex md:w-1/3 flex-col mt-8 md:mt-0 md:ml-4 sm:flex-row md:flex-col">
             <Newsletter/>
             <Editorials/>
           </div>
