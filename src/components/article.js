@@ -6,7 +6,7 @@ const Article = (props) => (
   <article className="border-b-2 last:border-b-0 sm:flex mt-4 items-center pb-6 md:mr-8">
   {props.articleImage && 
     <div className="sm:flex-shrink-0">
-      <img className="rounded-sm sm:w-56 w-full" src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=448&q=80" alt="Woman paying for a purchase"></img>
+      <img className="rounded-sm sm:w-56 w-full" src={props.articleImage} alt="Woman paying for a purchase"></img>
     </div>
   }
     <div className={props.articleImage ? "mt-4 sm:mt-0 sm:mx-6 items-center" :  "mt-4 sm:mt-0 mr-4 items-center"}>

@@ -21,7 +21,7 @@ const IndexPage = (props) => (
             articleTitle={node.node.title}
             articleCategory={node.node.categories[0].name}
             articleText={node.node.excerpt}
-            articleImage={props.articleImage}
+            articleImage={node.node.featured_media ? node.node.featured_media.source_url : null}
             articlePath={node.node.slug}
           />
         ))}
@@ -85,11 +85,13 @@ query HomePageQuery {
         categories {
           name
         }
+        featured_media {
+          source_url
+        }
       }
     }
   }
 }
-
 `
 
 export default IndexPage
