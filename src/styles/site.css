@@ -17,6 +17,6 @@
     float: left;
 }
 
-figure {
+.wp-block-image > figure {
     margin-left: 0;
-  }
+}
