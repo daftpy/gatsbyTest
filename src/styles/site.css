@@ -18,10 +18,6 @@
     float: left;
 }
 
-.wp-block-image > figure {
-    margin-left: 0;
-}
-
-figure {
-    margin: 0;
+.imbed figure {
+    margin-top: 100px;
 }
