@@ -16,3 +16,7 @@
 .alignleft > img {
     float: left;
 }
+
+figure {
+    margin-left: 0;
+  }
