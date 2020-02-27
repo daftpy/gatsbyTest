@@ -9,7 +9,7 @@ export default function Template({
   const post = data.wordpressPost
   return (
     <ArticleLayout siteName={data.site.siteMetadata.title} >
-      <SEO title={post.title} description={post.excerpt}/>
+      <SEO title={post.title} />
       <div>
           {post.featured_media && (
             <img className="w-full" src={post.featured_media.source_url} />

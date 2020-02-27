@@ -15,7 +15,7 @@ const IndexPage = (props) => (
     <SEO title="Home" />
     <div className="md:flex max-w-screen-xl m-auto px-8 justify-around">
       <div className="flex md:w-2/3 flex-col justify-around">
-        <h1 className="text-3xl font-bold mt-8">Headlines</h1>
+        <h2 className="text-3xl font-bold mt-8">Headlines</h2>
         {props.data.allWordpressPost.edges.map((node) => (
           <Article
             articleTitle={node.node.title}

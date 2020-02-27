@@ -6,7 +6,7 @@ const Header = ({ siteTitle }) => (
   <header>
   <div className="bg-blue-700 text-white">
     <div className="flex max-w-screen-xl justify-between mx-auto p-2 px-8">
-      <div className="text-white font-bold text-2xl"><Link to="/">{siteTitle}</Link></div>
+      <div className="text-white font-bold text-2xl"><Link to="/"><h1>{siteTitle}</h1></Link></div>
       <ul className="hidden md:visible md:flex justify-between text-center items-center">
         <li className="mx-4">
           <a href="#">Local</a>

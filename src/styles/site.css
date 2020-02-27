@@ -43,3 +43,11 @@
 .article-content > ul li {
     margin: .5rem 0 .5rem 1rem;
 }
+
+body {
+    font-family: 'Noto Serif TC';
+}
+
+h1, h2, h3, h4, h5, .article-category {
+    font-family: 'Roboto';
+}
