@@ -34,7 +34,7 @@ module.exports = {
         printRejected: false,
         develop: false,
         tailwind: true,
-        whitelist: ['figure', 'blockquote']
+        whitelist: ['figure', 'blockquote', 'wp-block-media-text']
       },
     },
     {

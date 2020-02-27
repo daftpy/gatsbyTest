@@ -11,5 +11,35 @@
 .article-content > h2 {
     font-weight: 600;
     font-size: 1.5rem;
-    color: red;
+}
+
+.article-content > figure {
+    margin-top: 1rem;
+}
+
+.wp-block-media-text {
+    margin-top: 1rem;
+    display: flex;
+}
+
+.wp-block-media-text > figure {
+    flex-basis: 50%;
+    padding-right: 1rem;
+}
+
+blockquote {
+    margin-top: 1rem;
+    padding: .5rem 1rem;
+    background: #edf3fa;
+    font-style: italic;
+    border-left: .6rem solid #818b96;
+}
+
+ul {
+    margin-top: 1rem;
+    list-style-type: disc;
+}
+
+ul li {
+    margin: .5rem 0 .5rem 1rem;
 }
