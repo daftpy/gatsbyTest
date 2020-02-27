@@ -13,11 +13,3 @@
     font-size: 1.5rem;
     color: red;
 }
-
-.alignleft > img {
-    float: left;
-}
-
-.article-content > div {
-    margin-left: -40px;
-}
