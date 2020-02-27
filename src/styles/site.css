@@ -13,6 +13,6 @@
     font-size: 1.5rem;
 }
 
-.article-content > .alignleft {
+.article-content > img {
     float: left;
 }
