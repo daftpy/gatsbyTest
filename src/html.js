@@ -11,7 +11,7 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC|Roboto&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:300,400|Roboto:700&display=swap" rel="stylesheet"></link>
         <link rel="stylesheet" href="https://i.icomoon.io/public/temp/93058a364e/UntitledProject/style.css"></link>
         {props.headComponents}
       </head>
